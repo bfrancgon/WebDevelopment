@@ -29,33 +29,44 @@
         if (computerSelection == "rock") {
           return ("It is a tie!");
         } else if (computerSelection == "paper") {
-          return ("You lose! Paper beats rock!");
-        } else (computerSelection == "scissors") 
-          return ("You win! Rock beats scissors");
+          return ("You lose! Paper beats rock!")
+          compScore +=1;
+          alert("You lose this round!");
+        } else (computerSelection == "scissors")
+          playerScore +=1;
+          alert("You win this round!");
         }
 
       if (playerSelection == "paper") {
           if (computerSelection == "paper") {
             return ("It is a tie!");
           } else if (computerSelection == "scissors") {
-            return ("You lose! Scissors beats Paper!");
+            return ("You lose! Scissors beats Paper!")
+            compScore +=1;
+          alert("You lose this round!");
           } else (computerSelection == "rock") 
-            return ("You win! Paper beats Rock");
-          }
+            return ("You win! Paper beats Rock")
+            playerScore +=1;
+          alert("You win this round!");
+        }
 
       if (playerSelection == "scissors") {
           if (computerSelection == "scissors") {
             return ("It is a tie!");
           } else if (computerSelection == "rock") {
-            return ("You lose! Rock beats Scissors!");
+            return ("You lose! Rock beats Scissors!")
+            compScore +=1;
+          alert("You lose this round!");
           } else (computerSelection == "paper") 
-            return ("You win! Scissors beats Paper!");
-          }
+            return ("You win! Scissors beats Paper!")
+            playerScore +=1;
+          alert("You win this round!");
+        }
       }
   
     const game = () => {
       for (var i = 0; i < 5; i++) {
-        let playerSelection = prompt ("Make a selection: Rock, Paper or Scissors?")
+        let playerSelection = prompt("Make a selection: Rock, Paper or Scissors?").toUpperCase();
         if (playerSelection == null) {
           console.log("Don't be a chicken! Keep playing");
         }
@@ -67,6 +78,14 @@
         console.log(playRound(playerSelection, computerSelection));
       }
     }
+
+    // if (compScore === 5) {
+    //   return("You lost the game!");
+    // }
+
+    // if (playerScore === 5) {
+    //   return("You won the game!");
+    // }
 
     game ()
 
